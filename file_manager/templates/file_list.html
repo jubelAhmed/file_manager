@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h1>File List</h1>
+  {% if file_list %}
+  <ul>
+    {% for detail in file_list %}
+      <li>
+        <h4>{{ detail.name }}</h4>
+      </li>
+	  <li>
+        <p> {{ detail.description }} </p> 
+      </li>
+	  <li>
+        <a href="{{detail.file}}"> {{detail.file}} </p> 
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p> There are no file available. </p> 
+  {% endif %}
+{% endblock %}
